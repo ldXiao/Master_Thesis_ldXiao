@@ -1,0 +1,271 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{natbib}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\bibliographystyle{plain}
+\title{\bf Witten Genus on Toric Complete Intersections}
+\author{Lin-Da Xiao %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\\Department of Physics\\
+Swiss Federal Institute of Technology in Zurich\\
+{\small(xiaol@student.ethz.ch)}}
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent
+This paper is a summarization of the author's master thesis. We present a general method to calculate elliptic genera on toric complete intersections and apply it to Witten genus. Finally, we will give a characterization for the witten genus to vanish.
+\end{abstract} 
+\section{Intorduction}
+Let $M$ be a $4k$ dimensional closed oriented smooth manifold. In \cite{witten1988index}, Witten genus is defined by formally applying the equivariant Atiyah-Singer Index Theorem to a hypothetical Dirac operator in the loop space and we can get the anologue of $\hat{A}$-genus
+\begin{equation*}
+	W(M)=\left\langle\hat{A}(TM) Ch(\Theta(T_\mathbb{C}M)),[M] \right\rangle,
+\end{equation*}
+where 
+\begin{equation*}
+	\Theta(T_{\mathbb{C}}M)=\underset{m=1}{\overset{\infty}{\oplus}} S_{q^{2m}}(T_{\mathbb{C}}M-\mathbb{C}^{4k})
+\end{equation*}
+is the Witten bundle defined in \cite{witten1988index} and $q=e^{\pi\sqrt{-1} \tau}$ with $Im(\tau)\geq 0$.
+To manifest the modular aspects of Witten genus, following \cite{liu1996elliptic}, we can also write it as
+\begin{equation*}
+	W(M)=\left\langle\prod_{i}\frac{x_i \theta'(0,\tau)}{\theta(x_i,\tau)},[M]\right\rangle
+\end{equation*}
+where $\{\pm 2\pi\sqrt{-1}x_i,1\leq i\geq 2k\}$ are the formal Chern roots of the bundle $T_{\mathbb{C}}M$
+
+The manifold $M$ is called \textbf{spin} if the first and second Stiefel-Whitney calsses $w_1(TM), w_2(TM)$ vanish. Moreover, manifold $M$ is caled \textbf{string} if the half fist Pontrjagin class vanishes. According to Atiyah-Singer index theorem, when manifold is spin, the Witten genus is an integral expanion in terms of $q$ (cf. \cite{hirzebruch1992manifolds}). And it is well-known that if the manifold is string, the Witten genus is a modular form of weight $2k$ over $SL(2,\mathbb{Z})$ with integral fourier expansion (\cite{zagier1988note}).
+Analogous to Lichnerowicz's classical result on $\hat{A}$ genus (cf. \cite{lawson2016spin}), which stated that $\hat{A}$ genus on spin manifold with positive scalar curvature vanishes, Stolz conjecutred that the Witten genus on string manifold with positive Ricci curvature vanishes(for the original review, cf. \cite{stolz1996conjecture}, and for a review cf. \cite{dessai2009some}). 
+
+Toward the Stolz's conjecture, we have to produce some vanishing results of Witten genus. There are basically two types of methods. One is to apply the theorem of Dessai \cite{dessai1994witten} which is based on Liu \cite{liu1995modular} when the manifold admits some nootrivial action of a semi-simple Lie group. The current result via this method include:
+\begin{enumerate}
+\item String homogenuous spaces of compact semi-simple Lie groups \cite{dessai1994witten,liu1995modular}。
+\item Total spaces of fiber bundles with fiber $G/H$, with compact semi-simple structure group $G$ \cite{stolz1996conjecture}.
+\item String Generalized complete intersection in irreducible, compact, Hermitian, symmetric spaces\cite{forster2007stolz}.
+\item String manifold with effective torus action such that $dim\  T>b_2(M)$ \cite{wiemeler2017note}.
+\end{enumerate}
+
+Alternatively, sometimes, one can reduce to calculation of residues. This method was first used by Landweber and Stone \cite{hirzebruch1992manifolds}. This method is purely computational and more direct, the vanishing results include:
+\begin{enumerate}
+\item String complete intersection in projective space\cite{hirzebruch1992manifolds}.
+\item String complete intersection in products of projective spaces \cite{chen2008witten}。
+\item String complete intersection in products of Grassmannians and flag manifolds\cite{zhou2014witten,zhuang2016vanishing}。
+\end{enumerate}
+This method also has many applications in elliptic genus\cite{ma2005elliptic,gorbounov2008mirror}.
+In this paper we generalize the result of Chen \& Han \cite{chen2008witten} to string complete intersection in Toric varieties. We mainly follow the second method in our calculation and also borrow the techniques of localization in \cite{dessai2016torus}.
+
+The paper is oranized as follows: In Section 2, we recall the basic notion of toric varieties. In Section 3, we generaly discuss the multiplicative genus on toric varieties. In Section 4 \& 5, we recall the equivariant localization of toric varieties and prove our main theorem.
+
+\section{Toric Variety}
+Toric varieties are algebraic geometric objects defined by combinatorial datum. They provide a introduction to algebraic geometry and commutative algebra. We will briefly review the necessary knowledge of toric varieties with an emphasis on the cohomology ring and characteristic classes. The standard reference of toric variity includes \cite{ewald2012combinatorial,cox2009toric}. 
+
+Lec $N$ be a lattice, and let $N_\mathbb{R}=N\otimes\mathbb{R}$and  $M^*=Hom_{\mathbb{Z}}(N,\mathbb{Z})$ be the dual lattice. The canonical pairing between these lattices is denoted $\langle m, n\rangle$.A subset $C\in N_\mathbb{R}$ is \textbf{rational polyhedral cone} if there exist a finite set $\{m_1, m_2,..., m_s\}\in M$ such that
+\begin{equation*}
+C=\cap_i \{x\in N_\mathbb{R}| \langle m_i, x\rangle \geq 0\}.
+\end{equation*}
+A \textbf{face} of $C$ is some subset that can make some of the inequalities equalities. A rational polyhedral cone $C$ is \textbf{simplicial} if 
+$$
+C=\sum_{i=1}^{k}\mathbb{R}_{\geq0} n_i, \ \ n_i\in N,
+$$
+whrer $k$ is the dimension of the subspace generated by $C$, and ${n_i}$ is part of the $\mathbb{R}$-basis of $N_{\mathbb{R}}$.
+A \textbf{dual cone} $C^*$ of $C$ is defined as follows
+\begin{equation*}
+C^*=\{v\in M_\mathbb{R}|\langle v,u\rangle\geq0, u\in C\}
+\end{equation*}
+Let $\Sigma$ be a set of rational polyhedral cones. Then $\Sigma$ is called a \textbf{fan} if 
+\begin{enumerate}
+\item each face of cones in $\Sigma$ is also a cone in $\Sigma$, and
+\item the intersection of any two cones in $\Sigma$ is a face of each.
+\end{enumerate}
+A fan is \textbf{complete} if
+\begin{equation*}
+\underset{C\in\Sigma}{\cup}C=N_\mathbb{R},
+\end{equation*}
+and \textbf{simplicial} if all the cones in $\Sigma$ are simplicial. 
+
+Let $\Sigma$ be a fan. We can associate a \textbf{toric variety} $X_\Sigma$ to $\Sigma$. If $C\subset L_\mathbb{R}$ let $C^*\subset M_\mathbb{R}$ be the dual cone. Then we have a $\mathbb{C}$-algebra $S_C$ defined by
+\begin{equation*}
+S_C=\mathbb{C}[\{z^{m}\}],\  m\in C^*\cap M
+\end{equation*}
+and we let $U_C$ be the affine variety $Spec\ S_C$. The variety $U_C$ is the \textbf{toric chart} associated to $C$.
+And then we can glue up all the affine toric varieties with respect to the combinatorics of $\Sigma$ to get the \textbf{toric variety} $X_\Sigma$ associated to fan. Let $C_1, C_2, C_1\cap C_2\in \Sigma$. Then we can identify $U_{C_1\cap C_2}$ with a principal open suvariety of $U_{C_1}$ and $U_{C_2}$. One can show that $X_\Sigma$ is separated, and has an open set isomorphic to an algebraic torus $T=(\mathbb{C}^*)^n$. Moreover, $X_\Sigma$ is complete if and only if $\Sigma$ is complete, and $X_\Sigma$ is nonsingular if and only if each cone of $\Sigma$ is generated by part of a basis of N.
+
+Let $\Sigma(1)$ denote the set of one-dimensional cones in $\Sigma$. For each $\rho\in \Sigma(1)$ there is a $T$-invariant divisor $D_{\rho}\subset X_\Sigma$. By Poincare duality, there is a cohomology class associated to $D_\rho$ in $H^2(X_\Sigma)$. We still denote this class $D_\rho$ via some abuse of notations. One can show that if $X_\Sigma$ is nonsingular, then the cohomology class $D_\rho$ generate the cohomology ring $H^*(X_\Sigma, \mathbb{Z})$ as follows.
+Let $X_\Sigma$ be a complete simplicial toric variety and fix a numbering $\rho_1,...,\rho_N$ for the rays in $\Sigma(1)$. Also let $n_i$ be the minimal generator of $\rho_i$ and introduce a variable $D_{\rho_i}$ for each $\rho_i$. In the ring $\mathbb{Z}[D_{\rho_1},...,D_{\rho_N}]$, let $\mathcal{I}$ be the monomial ideal with square-free generators as follows:
+\begin{equation*}
+\mathcal{I} = \langle D_{i_1}...D_{i_s} | i_j \text{are distinct and} \rho_{i_1}+...+\rho_{i_s} \text{is not a cone of } \Sigma\rangle.
+\end{equation*}
+We call $\mathcal{I}$ the Stanley-Reisner ideal. Also let $\mathcal{J}$ be the ideal generated by the linear forms
+\begin{equation*}
+\sum_{i}^r\langle m, n_i \rangle D_i 
+\end{equation*}
+where $m$ ranges over $M$ (or equivalently, over some basis for $M$). With these two ideal defined, we get the combinatoric presentation of the cohomology ring.
+\begin{thm}
+
+(Jurkiewicz-Danilov theorem) When $X_\Sigma$ is smooth complete toric variety, the cohomology ring  $H^*(X_\Sigma, \mathbb{Z})$ is isomorphic to 
+\begin{equation*}
+\mathbb{Z}[D_1,...,D_N]/{(\mathcal{I}+\mathcal{J})}.
+\end{equation*}
+Specially, we have $H^{odd}(X_\Sigma,\mathbb{Z})=0$.
+\end{thm}
+*******We easily derive the corollary that $\text{Picard}(X_\Sigma)\cong H^2(X_{\Sigma},\mathbb{Z})$. After we quotient the ideal generated by the linear relations, we can equivalently say that the cohomology ring is multiplicative generated by a basis of the Picard group. We denote the basis of Picard group as $p_1,...p_k$, and express the invariant divisor as
+$$
+D_i=\left\{
+\begin{aligned}
+& p_i & 1\leq i\leq k\\
+& \sum_j^k m_{i j} p_j  &k< i\leq N
+\end{aligned}
+\right.
+$$
+\section{Multiplicative genus on Toric Varieties}
+For smooth toric variety we have the following generalized Euler sequence\footnote[2]{Theorem 8.1.6 in Cox's book Toric variety}
+\begin{equation*}
+0\longrightarrow \mathcal{O}(X_\Sigma)^{\oplus k}\longrightarrow\oplus_{\rho\in \Sigma(1)}\mathcal{O}(D_\rho)\longrightarrow TX_{\Sigma}\longrightarrow0,
+\end{equation*}
+from which we can calculate the total Chern class and all the multiplicative genera of $TX_{\Sigma}$. Here the $\mathcal{O}_{D_\rho}$ is a line bundle defined by the divisor $D_\rho$ in the $Picard group$, of which the total Chern class is $1+D_\rho$. $k$ is the dimention of the picard group or equivalently the dimension of $H^2{X_\Sigma,\mathbb{Z}}$
+we can easily calculate that
+\begin{equation*}
+	c(TX_{\Sigma})=\prod_{\rho\in \Sigma(1)}(1+D_\rho).
+\end{equation*}
+We will see that the $D_\rho$s plays the role of Chern roots here.
+For a general multiplicative genus $F$, we observe that
+\begin{equation*}
+F(TX_{\Sigma})=\frac{F(\oplus_{\rho\in \Sigma(1)}\mathcal{O}(D_\rho))}{F(\mathcal{O}(X_\Sigma)^{\oplus k})}=\frac{\prod_{\rho\in \Sigma(1)} F(\mathcal{O}(D_\rho))}{F(\mathbb{\underline{Q}}^k)},
+\end{equation*}
+where $\mathbb{Q}=\mathbb{C} \text{ or } \mathbb{R}$ depending on whether we forget the complex structure.
+For the case of Elliptic genus, we have
+\begin{equation*}
+Ell(X_\Sigma,y,q)=\frac{\prod_{\rho\in \Sigma(1)}D_\rho\frac{\theta(D_\rho+z,\tau)}{\theta(D_\rho,\tau)}}{G(y,q)^k}
+\end{equation*}
+For the case of Witten genus,
+\begin{equation*}
+\mathcal{W}(X_\Sigma)=\prod_{\rho\in \Sigma(1)}D_\rho \frac{\theta(D_\rho,\tau)}{\theta'(0,\tau)}.
+\end{equation*}
+
+Now let's consider a complete intersection $Y$ as a generic intersection of $n$ hypersurfaces $\{Y_q\}_{1\leq q\leq n}$. eqch is dual to the cohomology class $\sum_{j}^k d_{q j} p_j$.
+Consider the inclusion map $\iota: Y\rightarrow X_\Sigma$, we have the adjunction formula:
+$$
+0\longrightarrow TY\longrightarrow\iota^*TX_{\Sigma}\longrightarrow\iota^*N\longrightarrow0,
+$$
+where the normal bundle $N$ is isomorphic to $\oplus_q^n\mathcal{O}(\sum_{j}^k d_{q j} p_j)$.
+By the multiplicative properties of Chern class and Witten genus, we have the following data:
+$$
+c(TY)=\iota^*\left(\frac{c(TX)}{c(TN)}\right)=\iota^*\left(\frac{\prod_i^k (1+p_i)\prod_{j=k+1}^{N}(1+\sum_i^k m_{ji}p_1)}{\prod_{q}^n(1+\sum_{j}^k d_{q j} p_j)}\right).
+$$
+Following these we have
+$$
+\begin{aligned}
+w_2(T_\mathbb{R}Y)& \equiv c_1(TY) (\text{mod } 2)\\
+& \equiv \iota^*\left(\sum_i^k p_i+\sum_{j=k+1}^{N} \sum_i^k m_{ji}p_i-\sum_{q}^n\sum_i^k d_{qi}p_i\right) \text{     (mod } 2)
+\end{aligned}
+$$
+and 
+$$
+p_1(T_{\mathbb{R}}Y)=i^*\left(\sum_i^k p_i^2+\sum_{j=k+1}^N (\sum_i^k m_{ji}p_i)^2-\sum_q^n(\sum_i^k d_{qi}p_i)^2\right)
+$$
+Also because of the multiplicative property of Witten genus, we have
+$$
+\mathcal{W}(TY)=\iota^*\left(\frac{\mathcal{W}(TX)}{\mathcal{W}(N)}\right)=\iota^*\left(\frac{\prod_i^k p_i \frac{\theta(p_i,\tau)}{\theta'(0,\tau)}\prod_{j=k+1}^N (\sum_s^k m_{js}p_s) \frac{\theta(\sum_s^k m_{js}p_s,\tau)}{\theta'(0,\tau)}}{\prod_{q}^n(\sum_j^k d_{q j} p_j) \frac{\theta(\sum_j^k d_{q j} p_j,\tau)}{\theta'(0,\tau)}}\right).
+$$
+Integrate the above formula over the fundamental class of Y, we have
+$$
+\begin{aligned}
+\int_{Y} \mathcal{W}(TY) 
+& =\int_X \iota_!\iota^*\left(\frac{\mathcal{W}(TX)}{\mathcal{W}(N)}\right)\\
+& =\int_X \left(\frac{\mathcal{W}(TX)}{\mathcal{W}(N)}\right)\cdot Euler(N)\\
+& =\int_X \left(\frac{\prod_i^k p_i \frac{\theta(p_i,\tau)}{\theta'(0,\tau)}\prod_{j=k+1}^N (\sum_s^k m_{js}p_s) \frac{\theta(\sum_s^k m_{js}p_s,\tau)}{\theta'(0,\tau)}}{\prod_{q}^n(\sum_j^k d_{q j} p_j) \frac{\theta(\sum_j^k d_{q j} p_j,\tau)}{\theta'(0,\tau)}}\right)\cdot \prod_{q}^n(\sum_j^k d_{q j} p_j)\\
+& =\int_X \left(\frac{\prod_i^k p_i \frac{\theta(p_i,\tau)}{\theta'(0,\tau)}\prod_{j=k+1}^N (\sum_s^k m_{js}p_s) \frac{\theta(\sum_s^k m_{js}p_s,\tau)}{\theta'(0,\tau)}}{\prod_{q}^n \frac{\theta(\sum_j^k d_{q j} p_j,\tau)}{\theta'(0,\tau)}}\right)
+\end{aligned}
+$$
+\section{Equivariant cohomology and genera as residues}
+In this section, we will mainly follow the equivariant cohomology chapter of Cox's book``Toric Variety'' and Givental's groundbreaking paper ``A mirror theorem of Toric complete intersection''
+
+A toric variety is naturally equipped with an effective torus action, where the torus has the dimension $|\Sigma(1)|=N$ and with $|\Sigma(n)|$ isolated fixed points. There is a ring morphism between the ordinary cohomology ring $H^*(X_{\Sigma},\mathbb{Q})$ and the equivariant cohomology ring $H_{T}^{*}(X_{\Sigma},\mathbb{Q})$.  
+
+Let's now have a brief recall on the construction of equivariant cohomology over toric varieties. Let $G$ be a compact connected Lie group, classified by  the principal $G$-bundle $EG\rightarrow BG$, whose total space is contractible. This bundle is uniquely determined up to homotopy equivalence. Then $G$ acts on the the space$X\times EG$ freely. We consider the famous \textbf{Borel's Construction}
+\begin{equation}
+	X\times_G EG=(X\times EG)/G.
+\end{equation}
+And the $equivariant cohomology$ of $X$ is defined to be 
+\begin{equation}
+	H^*_{G}(X)=H^*(X\times_G EG).
+\end{equation}
+A toric variety is naturally equipped with an effective torus action $T=(\mathbb{C}^*)^N$, where the torus has the dimension $|\Sigma(1)|$ and with $|\Sigma(n)|$ isolated fixed points. Then we consider $H^*_T(X_\Sigma)$. Note that 
+$$
+H^*_T(point)=H^*(BT)=H^*((\mathbb{CP^\infty})^N)=\mathbb{Q}[\lambda_1,\lambda_2,...,\lambda_N ],
+$$
+and all $\lambda$ has degree 2.
+There is a ring morphism between the ordinary cohomology ring $H^*(X_{\Sigma},\mathbb{Q})$ and the equivariant cohomology ring $H_{T}^{*}(X_{\Sigma},\mathbb{Q})$. $H^*_T(X_\Sigma)$ can be thout of as an $H^*_T(BT)$-module. Note also that the inclusion of a fiber $i_{X}: X_\Sigma\rightarrow X\times_G EG$ induces the ``Non-equivariant limit'' map $i^*_X: H^*_T(X_\Sigma)\rightarrow H^*(X_\Sigma)$, which amounts to mapping all $\lambda_i$ to 0.
+
+By the Proposition 12.4.13 in [Cox's book], every torus-invariant divisor $D_\rho$ has an equivariant counterpart $(D_\rho)_T$, and they generate the equivariant cohomology ring as
+$H^*_T(X_\Sigma,\mathbb{Q})=\mathbb{Q}[(D_1)_T,...,(D_N)_T]/(\mathcal{I+J})$.
+And according to [Givental] $(D_\rho)_T=D_\rho -\lambda_\rho$ in $H^2_T(X_\Sigma)$.
+
+This tempts us to define the equivariant version of any polynomial of invariant divisors $P_T(D_\rho)=P((D_\rho)_T)$, for example the equivariant Witten genus:
+$$
+\mathcal{W}_T(X_\Sigma)=\prod_{\rho\in \Sigma(1)}(D_\rho-\lambda_\rho) \frac{\theta(D_\rho-\lambda_\rho,\tau)}{\theta'(0,\tau)}
+$$
+Following Giverntal, we can find some explicit way to proceed calculations via the Atiyah-Bott localization.
+$$
+\int_{X_{\Sigma}} f=\sum_\alpha\int_{(Z_\alpha)_T}\left(\frac{i_{\alpha}^*(f)}{Euler(N_\alpha)}\right).
+$$
+Here, the $(X_{\Sigma})_T=X\times_T ET$ and $Z_\alpha$ are the fixed points corresponding to the full dimensional cone $\alpha$ in $\Sigma(n)$, and $N_\alpha$ is the normal bundle at the fixed point. combined with the definition of Grothendieck residue symbol, we can get the full explicit formula for a polynomial $f(p,\lambda)$ in $H_T^*(X,\mathbb{Q})$, as is at the bottom of page 22 of [Givental]
+$$
+\int_{X_\Sigma} f(p,\lambda)=\sum_\alpha res_\alpha \frac{f(p,\lambda)}{(D_1)_T\cdot (D_2)_T\cdot ...\cdot (D_N)_T} d p_1 dp_2...dp_k
+$$
+If we take the non-equivariant limit we can get an explicit we to calculate the the integration of $f(p,0)$ over the fundamental class $X_\Sigma$.
+
+\section{Vanishing result for some string complete intersection}
+Apply the above equation to Witten genus of the complete intersection and go to non-equivariant limit
+$$
+\begin{aligned}
+\int_{Y} \mathcal{W}(TY) 
+& =i_X^*\sum_\alpha res_\alpha\left(\frac{\prod_i^k \frac{\theta(p_i+\lambda_i,\tau)}{\theta'(0,\tau)}\prod_{j=k+1}^N \frac{\theta(\sum_s^k m_{js}p_s+\lambda_j,\tau)}{\theta'(0,\tau)}}{\prod_{q}^n \frac{\theta(\sum_j^k d_{q j} p_j,\tau)}{\theta'(0,\tau)}}\right)dp_1...dp_k
+\end{aligned}
+$$
+One would be expect to get some beautiful explicit result when it comes to elliptic genus and Witten genus. Unfortunately,  it is extremely difficult to make sense of the RHS of the above equation because it usually involve some delicate cancellation of infinites when $f$ is a rational function. But we can proceed as in the paper of [Chen and Han]. When $f$ is an elliptic function, the above differential form descends to a differential form on a compact torus and then the sum vanishes due to the global residue theorem. We can derive this via the standard transformation laws of theta functions. Here we list only the result.
+
+When the matrix $(m_{ji})$ and $(d_{ji})$ satisfy the following equations
+$$
+\sum_j^n d_{ji}-\sum_{j=k+1}^N m_{ji}-1\equiv 0\text{(   mod  2)},
+$$
+
+$$
+\sum_j^n d_{ji}^2-\sum_{j=k+1}^N m_{ji}^2-1=0,
+$$
+and
+$$
+\sum_j^n d_{ji} d_{j l}-\sum_{j=k+1}^N m_{ji}m_{j l}=0 \text{  for } i\neq l.
+$$
+Then complete intersection is string and the Witten genus vanishes.
+We can check that this includes the former result by [Chen and Han]
+\bibliography{WGTCIB.bib}
+\end{document}

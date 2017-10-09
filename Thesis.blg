@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Thesis.aux
+The style file: plain.bst
+Database file #1: WGTCIB.bib.bib
+Repeated entry---line 136 of file WGTCIB.bib.bib
+ : @article{zhou2014witten
+ :                        ,
+I'm skipping whatever remains of this entry
+Warning--there's a number but no series in borel1960seminar
+Warning--empty journal in chandrasekharan1985elliptic
+Warning--empty journal in da2001symplectic
+Warning--empty journal in givental1998mirror
+Warning--there's a number but no series in milnor1974characteristic
+You've used 28 entries,
+            2118 wiz_defined-function locations,
+            657 strings with 7421 characters,
+and the built_in function-call counts, 7882 in all, are:
+= -- 779
+> -- 282
+< -- 10
++ -- 119
+- -- 86
+* -- 485
+:= -- 1332
+add.period$ -- 87
+call.type$ -- 28
+change.case$ -- 117
+chr.to.int$ -- 0
+cite$ -- 33
+duplicate$ -- 334
+empty$ -- 683
+format.name$ -- 86
+if$ -- 1651
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 36
+newline$ -- 142
+num.names$ -- 56
+pop$ -- 147
+preamble$ -- 1
+purify$ -- 98
+quote$ -- 0
+skip$ -- 222
+stack$ -- 0
+substring$ -- 469
+swap$ -- 51
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 94
+warning$ -- 5
+while$ -- 81
+width$ -- 30
+write$ -- 300
+(There was 1 error message)

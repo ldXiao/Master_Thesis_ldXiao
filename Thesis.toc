@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Elliptic Genus and Witten Genus}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Characteristic Classes}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Multiplicative Genera}{9}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Witten Genus and Modular Forms}{14}{subsection.2.3}
+\contentsline {section}{\numberline {3}Toric Variety}{16}{section.3}
+\contentsline {subsection}{\numberline {3.1}Cone, Fan and Toric variety}{16}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Orbit-Cone Correspondence}{24}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Divisor, Cohomology on Toric Variety}{26}{subsection.3.3}
+\contentsline {section}{\numberline {4}Main Results}{29}{section.4}
+\contentsline {subsection}{\numberline {4.1}Witten Genus on Toric Complete Intersections}{30}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Equivariant Localization and Genera as Residues}{32}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Vanishing result for some string complete intersection}{34}{subsection.4.3}

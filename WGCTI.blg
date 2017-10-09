@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: WGCTI.aux
+The style file: plain.bst
+Database file #1: WGTCIB.bib.bib
+Repeated entry---line 136 of file WGTCIB.bib.bib
+ : @article{zhou2014witten
+ :                        ,
+I'm skipping whatever remains of this entry
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            614 strings with 6551 characters,
+and the built_in function-call counts, 5776 in all, are:
+= -- 583
+> -- 196
+< -- 5
++ -- 83
+- -- 60
+* -- 379
+:= -- 956
+add.period$ -- 58
+call.type$ -- 19
+change.case$ -- 82
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 234
+empty$ -- 505
+format.name$ -- 60
+if$ -- 1216
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 22
+newline$ -- 97
+num.names$ -- 38
+pop$ -- 88
+preamble$ -- 1
+purify$ -- 67
+quote$ -- 0
+skip$ -- 161
+stack$ -- 0
+substring$ -- 423
+swap$ -- 40
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 68
+warning$ -- 0
+while$ -- 63
+width$ -- 21
+write$ -- 208
+(There was 1 error message)
